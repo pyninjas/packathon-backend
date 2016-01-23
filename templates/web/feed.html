@@ -1,0 +1,38 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %}{% trans "Feed" %}{% endblock %}
+{% block nav %}
+<ul class="nav navbar-nav navbar-left responsive-nav main-nav-list">
+  <li>
+    <a href="/teams/">{% trans "Teams" %}</a>
+  </li>
+  <li>
+    <a href="/projects/">{% trans "Projects" %}</a>
+  </li>
+</ul>
+{% endblock %}
+{% block content %}
+<section class="focus" id="focus">
+  <div class="container">
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <!-- SECTION TITLE -->
+      <h2 class="dark-text">
+        {% comment %}Slogan at feed page{% endcomment %}{% trans "Packathon Announcements" %}
+      </h2>
+      <div class="section-legend">
+        {% trans "Use our mobile app and do not miss updates" %}
+      </div>
+    </div>
+    <div class="row">
+      {% for announcement in feed %}
+      <div class="col-lg-12 col-sm-12 focus-box" data-scrollreveal="enter left after 0.15s over 1s">
+        <h3 class="red-border-bottom">{{ announcement.title }}</h3>
+        <p>{{ announcement.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div> <!-- / END CONTAINER -->
+</section>  <!-- / END FOCUS SECTION -->
+{% endblock %}

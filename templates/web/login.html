@@ -1,0 +1,39 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %}{% comment %}Login title{% endcomment %}{% trans "Packathon Login" %}{% endblock %}
+{% block content %}
+<section class="focus" id="focus">
+  <div class="container">
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <!-- SECTION TITLE -->
+      <h2 class="dark-text">
+        {% trans "Packathon Login" %}
+      </h2>
+      <div class="section-legend">
+        {% if error %}
+          {{ error }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="row form-group">
+      <form src="/login" method="POST">
+        {% csrf_token %}
+        {% if request.GET.next %}
+        <input type="hidden" hidden class="hidden" name="next" value="{{ request.GET.next }}">
+        {% else %}
+        <input type="hidden" name="next" value="/">
+        {% endif %}
+        <div class="col-lg-12 col-sm-12 focus-box" data-scrollreveal="enter left after 0.15s over 1s">
+          <input type="email" required name="email" id="email" placeholder="{% trans 'E-mail' %}" class="form-control textinput textInput">
+        </div>
+        <div class="col-lg-12 col-sm-12 focus-box" data-scrollreveal="enter left after 0.15s over 1s">
+          <input type="password" required name="password" id="password" placeholder="{% trans 'Password' %}" class="form-control textinput textInput">
+        </div>
+        <input type="submit" class="btn btn-primary custom-button blue-btn" value="{% trans 'Login' %}">
+      </form>
+    </div>
+  </div> <!-- / END CONTAINER -->
+</section>  <!-- / END FOCUS SECTION -->
+{% endblock %}

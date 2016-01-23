@@ -1,0 +1,101 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load gravatar %}
+{% block title %}{% trans "Profile" %}{% endblock %}
+{% block nav %}
+<ul class="nav navbar-nav navbar-left responsive-nav main-nav-list">
+  <li>
+    <a href="/teams/">{% trans "Teams" %}</a>
+  </li>
+  <li>
+    <a href="/projects/">{% trans "Projects" %}</a>
+  </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<section class="our-team" id="team">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="dark-text">{% trans "Edit Profile" %}</h2>
+      <div class="section-legend">{% trans "For username and email changes please, ask administration" %}</div>
+    </div>
+    <div data-sr-complete="true" data-sr-init="true" class="row" data-scrollreveal="enter left after 0s over 0.1s">
+      <div class="col-lg-12 col-sm-12 team-box">
+        <div class="team-member">
+          <figure class="profile-pic">
+            <a href="https://www.gravatar.com" target="_blank">
+              <img src="{% gravatar_url user.email 256 %}" alt="Gravatar image">
+            </a>
+          </figure>
+          <div class="member-details">
+            <h3 class="dark-text red-border-bottom">{{ form.name.value }}</h3>
+            {% if user.description %}
+              <div class="position">{{ user.description }}</div>
+            {% else %}
+              <div class="position">{% trans "Packathon Participant" %}</div>
+            {% endif %}
+          </div>
+          <div class="social-icons">
+            <ul>
+              {% if user.git %}
+              <li>
+                <a href="{{ user.git }}" target="_blank"><i class="fa fa-git"></i></a>
+              </li>
+              {% endif %}
+              {% if user.twitter %}
+              <li>
+                <a href="{{ user.twitter }}" target="_blank"><i class="fa fa-twitter-square"></i></a>
+              </li>
+              {% endif %}
+              {% if user.website %}
+              <li>
+                <a href="{{ user.website }}" target="_blank"><i class="fa fa-link"></i></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          <div class="profile-edit-button">
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#profileEditModal">
+                  <i class="fa fa-pencil-square-o"></i> {% trans "Edit info" %}
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="profileEditModal" tabindex="-1" role="dialog" aria-labelledby="profileEditModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="profileEditModalLabel">{% trans "Edit Profile" %}</h4>
+      </div>
+      <form id="profile-form" method="post" action="">
+        <div class="modal-body">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            <div class="row profile-edit-inputs">
+                {% for field in form.visible_fields %}
+                <div class="col-md-12 profile-edit-field {{ field.auto_id }}">
+                    {{ field.help_text }}<br/>
+                    {{ field.errors }}
+                    {{ field }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+            <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

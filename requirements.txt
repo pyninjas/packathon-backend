@@ -1,0 +1,10 @@
+requests
+Django==1.9.
+djangorestframework==3.3.
+# django-rest-auth==0.6.
+git+https://github.com/Tivix/django-rest-auth.git@master
+django-filter
+django-gravatar2
+django-picklefield
+pytz
+docutils

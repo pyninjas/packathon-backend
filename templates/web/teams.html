@@ -1,0 +1,34 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %}{% comment %}Teams list title{% endcomment %}{% trans "Teams" %}{% endblock %}
+{% block content %}
+<section class="focus" id="focus">
+  <div class="container">
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <!-- SECTION TITLE -->
+      <h2 class="dark-text">
+        {% comment %}Slogan at teams page{% endcomment %}{% trans "Packathon Dev Teams" %}
+      </h2>
+      <div class="section-legend">
+        {% trans "Check teams, know your opponents" %}
+      </div>
+    </div>
+    <div class="row">
+      {% for team in teams %}
+      <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s">
+        <div class="service-icon">
+          <a href="/teams/{{ team.id }}">
+            <i class="pixeden" style="background:url({% static 'img/teams.png' %}) no-repeat center;width:100%; height:100%;"></i> <!-- FOCUS ICON-->
+          </a>
+        </div>
+        <h3 class="red-border-bottom"><a href="/teams/{{ team.id }}" class="project-name-link">{{ team.name }}</a></h3>
+        <!-- FOCUS HEADING -->
+          <p><a href="/projects/{{ project.id }}" class="project-link">{{ project.name }}</a></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div> <!-- / END CONTAINER -->
+</section>  <!-- / END FOCUS SECTION -->
+{% endblock %}

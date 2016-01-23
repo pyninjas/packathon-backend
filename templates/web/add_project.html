@@ -1,0 +1,46 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %}{% trans "Add/Edit Project" %}{% endblock %}
+{% block nav %}
+<ul class="nav navbar-nav navbar-left responsive-nav main-nav-list">
+  <li>
+    <a href="/teams/">{% trans "Teams" %}</a>
+  </li>
+  <li>
+    <a href="/projects/">{% trans "Projects" %}</a>
+  </li>
+</ul>
+{% endblock %}
+{% block content %}
+<section class="focus" id="focus">
+  <div class="container">
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <!-- SECTION TITLE -->
+      <h2 class="dark-text">
+        {% blocktrans with user.team as team_name %}{{ team_name }}'s Project{% endblocktrans %}
+      </h2>
+      <div class="section-legend">
+        {% if error %}
+          {{ error }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="row form-group">
+      <form src="" method="POST">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+          {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+        <div class="col-lg-12 col-sm-12 focus-box" data-scrollreveal="enter left after 0.15s over 1s">
+          {{ field }}
+        </div>
+        {% endfor %}
+        <input type="submit" class="btn btn-primary custom-button blue-btn" value="{% trans 'Submit' %}">
+      </form>
+    </div>
+  </div> <!-- / END CONTAINER -->
+</section>  <!-- / END FOCUS SECTION -->
+{% endblock %}

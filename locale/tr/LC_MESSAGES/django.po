@@ -1,0 +1,373 @@
+# Turkish for packathon-vote.
+# Copyright (C) 2015 pyninjas
+# This file is distributed under the same license as the PACKAGE package.
+# Emin Mastizada <emin@pyninjas.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-23 00:48+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Emin Mastizada <emin@pyninjas.com>\n"
+"Language-Team: TR <LL@li.org>\n"
+"Language: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: common/forms.py:10 common/forms.py:11
+msgid "Name"
+msgstr "İsim"
+
+#: common/forms.py:12
+msgid "Description,Position"
+msgstr "Açıklama/Pozisyon"
+
+#: common/forms.py:13
+msgid "Description, Position"
+msgstr "Açıklama/Pozisyon"
+
+#: common/forms.py:14 project/forms.py:20 templates/web/project.html.py:38
+#: templates/web/team.html:32
+msgid "Website"
+msgstr "Web Sitesi"
+
+#: common/forms.py:15 project/forms.py:22
+msgid "Website URL"
+msgstr "Web Sitesi Adresi"
+
+#: common/forms.py:16 common/forms.py:17 project/forms.py:18
+msgid "Git URL"
+msgstr "Git Adresi"
+
+#: common/forms.py:18 common/forms.py:19
+msgid "Twitter URL"
+msgstr "Twitter Adresi"
+
+#: common/models.py:54
+msgid "Setting"
+msgstr "Ayar"
+
+#: common/models.py:55
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: packathon/settings.py:141
+msgid "English"
+msgstr "English"
+
+#: packathon/settings.py:142
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: project/forms.py:11 project/forms.py:13
+msgid "Project Name"
+msgstr "Proje İsmi"
+
+#: project/forms.py:16
+msgid "Git"
+msgstr "Git"
+
+#: project/views.py:43
+msgid "Vote not started yet"
+msgstr "Oylama henüz başlamadı"
+
+#: project/views.py:45
+msgid "Vote ended"
+msgstr "Oylama sona erdi"
+
+#: project/views.py:49
+msgid "Project does not exists"
+msgstr "Proje mevcut değil"
+
+#: project/views.py:53
+msgid "No team assigned to project"
+msgstr "Projenin takımı yok"
+
+#: project/views.py:55
+msgid "You cannot vote for your own project"
+msgstr "Kendi projenize oy kullanamazsınız"
+
+#: project/views.py:59
+msgid "Already voted for this project"
+msgstr "Daha önce bu projeye oy verdiniz"
+
+#: project/views.py:68
+msgid "Vote Accepted"
+msgstr "Oyunuz başarıyla gönderildi"
+
+#: team/views.py:25
+msgid "Unknown Team"
+msgstr "Bilinmeyen Takım"
+
+#: team/views.py:27
+msgid "No users"
+msgstr "Kullanıcısı yok"
+
+#: templates/web/add_project.html:4
+msgid "Add/Edit Project"
+msgstr "Proje Ekle/Değiştir"
+
+#: templates/web/add_project.html:8 templates/web/feed.html.py:8
+#: templates/web/index.html:23 templates/web/profile.html.py:9
+#: templates/web/project.html:14 templates/web/team.html.py:14
+#: templates/web/teams.html:5
+msgid "Teams"
+msgstr "Takımlar"
+
+#: templates/web/add_project.html:11 templates/web/feed.html.py:11
+#: templates/web/index.html:25 templates/web/profile.html.py:12
+#: templates/web/project.html:17 templates/web/projects.html.py:5
+#: templates/web/team.html:17
+msgid "Projects"
+msgstr "Projeler"
+
+#: templates/web/add_project.html:22
+#, python-format
+msgid "%(team_name)s's Project"
+msgstr "%(team_name)s için Proje"
+
+#: templates/web/add_project.html:41
+msgid "Submit"
+msgstr "Gönder"
+
+#: templates/web/base.html:54
+msgid "Toggle navigation"
+msgstr "Navigasyonu çevir"
+
+#: templates/web/base.html:81 templates/web/login.html.py:35
+msgid "Login"
+msgstr "Giriş"
+
+#: templates/web/base.html:86 templates/web/profile.html.py:5
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/web/base.html:90
+msgid "Logout"
+msgstr "Çık"
+
+#: templates/web/feed.html:4 templates/web/index.html.py:24
+msgid "Feed"
+msgstr "Duyurular"
+
+#: templates/web/feed.html:23
+msgid "Packathon Announcements"
+msgstr "Packathon Duyuruları"
+
+#: templates/web/feed.html:26
+msgid "Use our mobile app and do not miss updates"
+msgstr "Mobil uygulamamızı kullanın ve duyuruları kaçırmayın"
+
+#: templates/web/index.html:5
+msgid "Real Hackathon for Real Hackers"
+msgstr "Gerçek Yazılımcılara, Gerçek Hackathon"
+
+#: templates/web/index.html:13
+#, python-format
+msgid "Vote begins at %(vote_time)s"
+msgstr "Oylama saat %(vote_time)s'da başlayacak"
+
+#: templates/web/index.html:15
+#, python-format
+msgid "Vote ends at %(end_time)s"
+msgstr "Oylama saat %(end_time)s'da biticek"
+
+#: templates/web/index.html:17
+#, python-format
+msgid "Vote ended at %(end_time)s"
+msgstr "Oylama saat %(end_time)s'da bitti"
+
+#: templates/web/index.html:41
+msgid "EVETHING IS TECHNOLOGY"
+msgstr "HER ŞEY TEKNOLOJİ"
+
+#: templates/web/index.html:44
+msgid "Check applications, vote for your favourites"
+msgstr "Uygulamaları deneyin, sevdiğiniz projelere oy verin"
+
+#: templates/web/index.html:54
+msgid "WEB"
+msgstr "WEB"
+
+#: templates/web/index.html:56
+msgid "Check news and vote using web interface"
+msgstr "Duyuruları okuyun ve web sitesinden oyunuzu kullanın"
+
+#: templates/web/index.html:64
+msgid "Android"
+msgstr "Android"
+
+#: templates/web/index.html:66
+msgid "Download our Android application for live push notifications and more"
+msgstr ""
+"Ani bildirimler ve bir çok özellikler için Android uygulamamızı indirin"
+
+#: templates/web/index.html:74
+msgid "API"
+msgstr "API"
+
+#: templates/web/index.html:76
+msgid ""
+"Too cool to use app? We also have api for you, use curl or what you want, "
+"have fun."
+msgstr ""
+"Daha da eğlenmek istiyorsanız ve zamanınız bol mu? API üzerinden tüm "
+"işlemleri yapa bilirsiniz."
+
+#: templates/web/index.html:85
+msgid "Vote Started"
+msgstr "Oylama Başlamıştır"
+
+#: templates/web/index.html:86
+msgid "Vote Ended"
+msgstr "Oylama Sona Erdi"
+
+#: templates/web/login.html:5 templates/web/login.html.py:13
+msgid "Packathon Login"
+msgstr "Packathon Giriş"
+
+#: templates/web/login.html:30
+msgid "E-mail"
+msgstr "E-Posta"
+
+#: templates/web/login.html:33
+msgid "Password"
+msgstr "Parola"
+
+#: templates/web/profile.html:21 templates/web/profile.html.py:75
+msgid "Edit Profile"
+msgstr "Profili Güncelle"
+
+#: templates/web/profile.html:22
+msgid "For username and email changes please, ask administration"
+msgstr ""
+"Kullanıcı ismi ve e-posta güncellemeleri için lütfen yönetime müracaat ediniz"
+
+#: templates/web/profile.html:37 templates/web/project.html.py:69
+#: templates/web/team.html:68
+msgid "Packathon Participant"
+msgstr "Packathon Katılımcısı"
+
+#: templates/web/profile.html:61
+msgid "Edit info"
+msgstr "Bilgileri güncelle"
+
+#: templates/web/profile.html:94
+msgid "Close"
+msgstr "Kapat"
+
+#: templates/web/profile.html:95
+msgid "Save"
+msgstr "Kaydet"
+
+#: templates/web/project.html:27
+#, python-format
+msgid "by %(teamname)s"
+msgstr "%(teamname)s tarafından"
+
+#: templates/web/project.html:35
+msgid "The Worst Unknown Error"
+msgstr "Bilinmeyen en kötü baş belası"
+
+#: templates/web/project.html:37
+msgid "Source Code"
+msgstr "Kaynak Kodu"
+
+#: templates/web/project.html:40
+msgid "Edit Project"
+msgstr "Projeyi Güncelle"
+
+#: templates/web/project.html:42
+msgid "Vote"
+msgstr "Oyla"
+
+#: templates/web/project.html:54 templates/web/team.html.py:30
+#: templates/web/team.html:53
+msgid "Members"
+msgstr "Üyeler"
+
+#: templates/web/project.html:55 templates/web/team.html.py:54
+#, python-format
+msgid "%(teamname)s Developers"
+msgstr "%(teamname)s Yazılımcıları"
+
+#: templates/web/project.html:101
+msgid "Please login to vote"
+msgstr "Lütfen oy kullanmak için giriş yapınız"
+
+#: templates/web/project.html:102
+msgid "Unknown Error! Please, report to administration."
+msgstr "Bilinmeyen Hata! Lütfen yönetime bildiriniz."
+
+#: templates/web/projects.html:14
+msgid "PROJECTS BY COMPETITORS"
+msgstr "Rakiplerin Projeleri"
+
+#: templates/web/projects.html:17
+msgid "Check projects, vote for your favourites"
+msgstr "Uygulamaları deneyin, sevdiğiniz projelere oy kullanın"
+
+#: templates/web/team.html:27
+#, python-format
+msgid "%(projectname)s Developers"
+msgstr "%(projectname)s Yazılımcıları"
+
+#: templates/web/team.html:35
+msgid "Project"
+msgstr "Proje"
+
+#: templates/web/team.html:38
+msgid "Add Project"
+msgstr "Proje Ekle"
+
+#: templates/web/team.html:40
+msgid "No Project"
+msgstr "Proje Yok"
+
+#: templates/web/teams.html:14
+msgid "Packathon Dev Teams"
+msgstr "Packathon Yazılımcı Takımları"
+
+#: templates/web/teams.html:17
+msgid "Check teams, know your opponents"
+msgstr "Takımları kontrol edin, rakiplerinizi tanıyın"
+
+#: web/views.py:51
+msgid "Missing Fields"
+msgstr "Eksik Alanlar"
+
+#: web/views.py:54
+msgid "User not found"
+msgstr "Kullanıcı bulunamadı"
+
+#: web/views.py:62
+msgid "Account Disabled"
+msgstr "Hesap Kapatılmıştır"
+
+#: web/views.py:64
+msgid "Invalid login details"
+msgstr "Yanlış giriş bilgileri"
+
+#: web/views.py:107
+msgid "Project not found"
+msgstr "Proje bulunamadı"
+
+#: web/views.py:114
+msgid "Team not set"
+msgstr "Takım seçilmemiştir"
+
+#: web/views.py:118 web/views.py:152
+msgid "No users attached to team"
+msgstr "Takımda kullanıcı yok"
+
+#: web/views.py:144
+msgid "Team not found"
+msgstr "Takım bulunamadı"
+
+#: web/views.py:158
+msgid "Packathon"
+msgstr "Packathon"

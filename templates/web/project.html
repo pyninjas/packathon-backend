@@ -1,0 +1,105 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load gravatar %}
+{% block title %}{{ project.name }}{% endblock %}
+{% block backgroundImage %}
+  <style type="text/css" id="custom-background-css">
+    body.custom-background { background-image: url('{% static "img/cpu.jpg" %}'); background-repeat: no-repeat; background-position: top center; background-attachment: fixed; }
+  </style>
+{% endblock %}
+{% block nav %}
+<ul class="nav navbar-nav navbar-left responsive-nav main-nav-list">
+  <li>
+    <a href="/teams/">{% trans "Teams" %}</a>
+  </li>
+  <li>
+    <a href="/projects/">{% trans "Projects" %}</a>
+  </li>
+</ul>
+{% endblock %}
+{% block homeheader %}
+<div class="home-header-wrap">
+<div class="header-content-wrap">
+  <div class="container">
+    <h1 class="intro-text">
+      {{ project.name }}<br/>
+      <small style="color: #e8e8e8">{% blocktrans with team.name as teamname %}by {{ teamname }}{% endblocktrans %}</small>
+      <input type="hidden" class="hidden project-id" value="{{ project.id }}">
+    </h1>
+    <div class="buttons">
+      <div class="alert alert-dismissible project-alert" style="display: none;" role="alert">
+        <button type="button" class="close project-alert-close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <span class="project-vote-message">{% trans "The Worst Unknown Error" %}</span>
+      </div>
+      <a href="{{ project.git }}" target="_blank" class="btn btn-primary custom-button blue-btn"><i class="fa fa-git-square"></i> {% trans "Source Code" %}</a>
+      <a href="{{ project.website }}" target="_blank" class="btn btn-primary custom-button green-btn"><i class="fa fa-link"></i> {% trans "Website" %}</a>
+      {% if request.user and request.user.team == team %}
+      <a href="/projects/add" class="btn btn-primary custom-button red-btn"><i class="fa fa-cogs"></i> {% trans "Edit Project" %}</a>
+      {% else %}
+      <a href="" class="btn btn-primary custom-button red-btn vote-button"><i class="fa fa-check-square-o"></i> {% trans "Vote" %}</a>
+      {% endif %}
+    </div>
+  </div>
+</div><!-- .header-content-wrap -->
+<div class="clear"></div>
+</div>
+{% endblock %}
+{% block content %}
+<section class="our-team" id="team">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="dark-text">{% trans "Members" %}</h2>
+      <div class="section-legend">{% blocktrans with team.name as teamname %}{{ teamname }} Developers{% endblocktrans %}</div>
+    </div>
+    <div data-sr-complete="true" data-sr-init="true" class="row" data-scrollreveal="enter left after 0s over 0.1s">
+      {% for user in users %}
+      <div class="col-lg-3 col-sm-3 team-box">
+        <div class="team-member">
+          <figure class="profile-pic">
+            <img src="{% gravatar_url user.email 256 %}" alt="Gravatar image">
+          </figure>
+          <div class="member-details">
+            <h3 class="dark-text red-border-bottom">{{ user }}</h3>
+            {% if user.description %}
+              <div class="position">{{ user.description }}</div>
+            {% else %}
+              <div class="position">{% trans "Packathon Participant" %}</div>
+            {% endif %}
+          </div>
+          <div class="social-icons">
+            <ul>
+              {% if user.git %}
+              <li>
+                <a href="{{ user.git }}" target="_blank"><i class="fa fa-git"></i></a>
+              </li>
+              {% endif %}
+              {% if user.twitter %}
+              <li>
+                <a href="{{ user.twitter }}" target="_blank"><i class="fa fa-twitter-square"></i></a>
+              </li>
+              {% endif %}
+              {% if user.website %}
+              <li>
+                <a href="{{ user.website }}" target="_blank"><i class="fa fa-link"></i></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block footer_js %}
+<script type='text/javascript'>
+  var Translations = {
+    "login_error": "{% trans "Please login to vote" %}",
+    "unknown_error": "{% trans "Unknown Error! Please, report to administration." %}"
+  }
+</script>
+{% endblock %}

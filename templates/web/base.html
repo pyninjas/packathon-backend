@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load staticfiles %}{% load i18n %}{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %} | Packathon</title>
+	<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+      display: inline !important;
+      border: none !important;
+      box-shadow: none !important;
+      height: 1em !important;
+      width: 1em !important;
+      margin: 0 .07em !important;
+      vertical-align: -0.1em !important;
+      background: none !important;
+      padding: 0 !important;
+    }
+  </style>
+  <link rel='stylesheet' id='pirate_forms_front_styles-css'  href='{% static "css/front.css" %}' type='text/css' media='all' />
+  <link rel='stylesheet' id='zerif_bootstrap_style-css'  href='{% static "css/bootstrap.min.css" %}' type='text/css' media='all' />
+  <link rel='stylesheet' id='zerif_fontawesome-css'  href='{% static "css/font-awesome.min.css" %}' type='text/css' media='all' />
+  <link rel='stylesheet' id='zerif_pixeden_style-css'  href='{% static "css/pixeden-icons.css" %}' type='text/css' media='all' />
+  <link rel='stylesheet' id='zerif_style-css'  href='{% static "css/style.css" %}' type='text/css' media='all' />
+  <link rel='stylesheet' id='zerif_responsive_style-css'  href='{% static "css/responsive.css" %}' type='text/css' media='all' />
+  <link rel='stylesheet'  href='{% static "css/main.css" %}' type='text/css' media='all' />
+  <script type='text/javascript' src='{% static "js/jquery.min.js" %}'></script>
+  <script type='text/javascript' src='{% static "js/jquery-migrate.min.js" %}'></script>
+  <script type='text/javascript'>
+    /* <![CDATA[ */
+      var pirateFormsObject = {"errors":""};
+    /* ]]> */
+  </script>
+  <script type='text/javascript' src='{% static "js/scripts-general.js" %}'></script>
+  {% block backgroundImage %}
+  <style type="text/css" id="custom-background-css">
+    body.custom-background { background-image: url('{% static "img/hackathon.jpg" %}'); background-repeat: no-repeat; background-position: top center; background-attachment: fixed; }
+  </style>
+  {% endblock %}
+</head>
+<body class="home blog custom-background group-blog" >
+<div id="mobilebgfix">
+	<div class="mobile-bg-fix-img-wrap">
+		<div class="mobile-bg-fix-img"></div>
+	</div>
+	<div class="mobile-bg-fix-whole-site">
+  <header id="home" class="header">
+  	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
+  		<div class="container">
+  			<div class="navbar-header responsive-logo">
+  				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+  				  <span class="sr-only">{% trans "Toggle navigation" %}</span>
+  				  <span class="icon-bar"></span>
+  			    <span class="icon-bar"></span>
+  				  <span class="icon-bar"></span>
+  				</button>
+					<a href="/" class="navbar-brand"><img src="{% static "img/packathon.png" %}" alt="Home Page"></a>
+  			</div>
+				<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation">
+          {% block nav %}{% endblock %}
+  				<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
+            <li class="page_item{% if user.is_authenticated %} dropdown{% endif %}">
+              {% if user.is_authenticated %}
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  {% if user.first_name %}
+                    {{ user.first_name }}
+                    {% if user.last_name %}
+                      {{ user.last_name }}
+                    {% endif %}
+                  {% elif user.last_name %}
+                    {{ user.last_name }}
+                  {% else %}
+                    {{ user.username }}
+                  {% endif %}
+                  <b class="caret"></b>
+                </a>
+              {% else %}
+                <a href="/login/?next={{ request.path }}">{% comment %}Username for AnonymousUser{% endcomment %}{% trans "Login" %}</a>
+              {% endif %}
+              <ul class="dropdown-menu">
+                {% if user.is_authenticated %}
+                <li>
+                  <a href="/users/{{ user.id }}/">{% trans "Profile" %}</a>
+                </li>
+                <li>
+                  <a href="/api-auth/logout/?next=/">{% comment %}Logout Button{% endcomment %}{% trans "Logout" %}</a>
+                </li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
+        </nav>
+  		</div>
+  	</div>
+  	<!-- / END TOP BAR -->
+    {% block homeheader %}{% endblock %}
+  </header> <!-- / END HOME SECTION  -->
+  <div id="content" class="site-content">
+    {% block content %}{% endblock %}
+  </div><!-- .site-content -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="col-md-4 company-details">
+        <div class="icon-top red-text">
+          <img src="{% static 'img/map25-redish.png' %}" alt="" />
+        </div>
+        Bahçeşehir Üniversitesi, Çırağan Caddesi, Osmanpaşa Mektebi Sokak No: 4 - 6, 34349 Beşiktaş / İstanbul
+      </div>
+      <div class="col-md-4 company-details">
+        <div class="icon-top green-text">
+          <img src="{% static 'img/envelope4-green.png' %}" alt="" />
+        </div>
+        <a href="mailto:info@packathon.org">info@packathon.org</a><br/>
+        <form action="{% url 'set_language' %}" method="post" class="switch-lang-form" name="switchLanguageForm">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <select name="language" onChange="switchLanguageForm.submit();">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+      </div>
+      <div class="col-md-4 copyright">
+        <ul class="social">
+          <li>
+            <a target="_blank" href="https://twitter.com/packathonorg"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.pyninjas.com/"><img src="{% static 'img/pyninjas.png' %}" alt=""></a>
+          </li>
+        </ul>
+        <div class="zerif-copyright-box">
+          Theme: <a class="zerif-copyright" href="http://themeisle.com/themes/zerif-lite/" target="_blank" rel="nofollow">Zerif Lite</a>
+        </div>
+        <div class="zerif-copyright-box">
+          App: <a class="zerif-copyright" href="https://github.com/pyninjas/" target="_blank">pyninjas</a>
+        </div>
+      </div>
+    </div> <!-- / END CONTAINER -->
+  </footer> <!-- / END FOOOTER  -->
+</div><!-- mobile-bg-fix-whole-site -->
+</div><!-- .mobile-bg-fix-wrap -->
+
+<script type='text/javascript' src='{% static "js/bootstrap.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/jquery.knob.js" %}'></script>
+<script type='text/javascript' src='{% static "js/scrollReveal.js" %}'></script>
+<script type='text/javascript' src='{% static "js/zerif.js" %}'></script>
+<script type='text/javascript' src='{% static "js/main.js" %}'></script>
+{% block footer_js %}{% endblock %}
+
+</body>
+</html>

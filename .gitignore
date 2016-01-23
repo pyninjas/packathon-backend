@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+migrations/
+db.sqlite3
+local_settings.py
+/static/
+packathon/static/
+.idea

@@ -1,0 +1,48 @@
+body {
+  padding-right: 0 !important;
+}
+.modal-body {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.profile-edit-field input {
+  width: 70%;
+}
+.switch-lang-form {
+  padding-top: 30px;
+}
+.project-link {
+  color: #808080;
+  font-size: 14px;
+}
+.project-link:visited {
+  color: #BBB;
+  font-size: 14px;
+}
+.project-name-link {
+  color: #404040;
+  font-size: 17px;
+}
+.project-name-link:visited {
+  color: #404040;
+  font-size: 17px;
+}
+.project-alert {
+  width: 60%;
+  margin: auto;
+}
+.project-alert-close {
+  margin: 0px;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+  color: #121213;
+  background-color: #FFF;
+}
+.profile-edit-inputs {
+  text-align: center;
+}
+.textinput {
+  width: 30%;
+  text-align: center;
+  display: inherit;
+}

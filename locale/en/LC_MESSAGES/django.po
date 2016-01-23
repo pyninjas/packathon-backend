@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-23 00:23+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: common/forms.py:10 common/forms.py:11
+msgid "Name"
+msgstr ""
+
+#: common/forms.py:12
+msgid "Description,Position"
+msgstr ""
+
+#: common/forms.py:13
+msgid "Description, Position"
+msgstr ""
+
+#: common/forms.py:14 project/forms.py:20 templates/web/project.html.py:38
+#: templates/web/team.html:32
+msgid "Website"
+msgstr ""
+
+#: common/forms.py:15 project/forms.py:22
+msgid "Website URL"
+msgstr ""
+
+#: common/forms.py:16 common/forms.py:17 project/forms.py:18
+msgid "Git URL"
+msgstr ""
+
+#: common/forms.py:18 common/forms.py:19
+msgid "Twitter URL"
+msgstr ""
+
+#: common/models.py:54
+msgid "Setting"
+msgstr ""
+
+#: common/models.py:55
+msgid "Settings"
+msgstr ""
+
+#: packathon/settings.py:141
+msgid "English"
+msgstr ""
+
+#: packathon/settings.py:142
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: project/forms.py:11 project/forms.py:13
+msgid "Project Name"
+msgstr ""
+
+#: project/forms.py:16
+msgid "Git"
+msgstr ""
+
+#: project/views.py:43
+msgid "Vote not started yet"
+msgstr ""
+
+#: project/views.py:45
+msgid "Vote ended"
+msgstr ""
+
+#: project/views.py:49
+msgid "Project does not exists"
+msgstr ""
+
+#: project/views.py:53
+msgid "No team assigned to project"
+msgstr ""
+
+#: project/views.py:55
+msgid "You cannot vote for your own project"
+msgstr ""
+
+#: project/views.py:59
+msgid "Already voted for this project"
+msgstr ""
+
+#: project/views.py:68
+msgid "Vote Accepted"
+msgstr ""
+
+#: team/views.py:25
+msgid "Unknown Team"
+msgstr ""
+
+#: team/views.py:27
+msgid "No users"
+msgstr ""
+
+#: templates/web/add_project.html:4
+msgid "Add/Edit Project"
+msgstr ""
+
+#: templates/web/add_project.html:8 templates/web/feed.html.py:8
+#: templates/web/index.html:23 templates/web/profile.html.py:9
+#: templates/web/project.html:14 templates/web/team.html.py:14
+#: templates/web/teams.html:5
+msgid "Teams"
+msgstr ""
+
+#: templates/web/add_project.html:11 templates/web/feed.html.py:11
+#: templates/web/index.html:25 templates/web/profile.html.py:12
+#: templates/web/project.html:17 templates/web/projects.html.py:5
+#: templates/web/team.html:17
+msgid "Projects"
+msgstr ""
+
+#: templates/web/add_project.html:22
+#, python-format
+msgid "%(team_name)s's Project"
+msgstr ""
+
+#: templates/web/add_project.html:41
+msgid "Submit"
+msgstr ""
+
+#: templates/web/base.html:54
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/web/base.html:81 templates/web/login.html.py:35
+msgid "Login"
+msgstr ""
+
+#: templates/web/base.html:86 templates/web/profile.html.py:5
+msgid "Profile"
+msgstr ""
+
+#: templates/web/base.html:90
+msgid "Logout"
+msgstr ""
+
+#: templates/web/feed.html:4 templates/web/index.html.py:24
+msgid "Feed"
+msgstr ""
+
+#: templates/web/feed.html:23
+msgid "Packathon Announcements"
+msgstr ""
+
+#: templates/web/feed.html:26
+msgid "Use our mobile app and do not miss updates"
+msgstr ""
+
+#: templates/web/index.html:5
+msgid "Gerçek Yazılımcılara, Gerçek Hackathon"
+msgstr ""
+
+#: templates/web/index.html:13
+#, python-format
+msgid "Vote begins at %(vote_time)s"
+msgstr ""
+
+#: templates/web/index.html:15
+#, python-format
+msgid "Vote ends at %(end_time)s"
+msgstr ""
+
+#: templates/web/index.html:17
+#, python-format
+msgid "Vote ended at %(end_time)s"
+msgstr ""
+
+#: templates/web/index.html:41
+msgid "EVETHING IS TECHNOLOGY"
+msgstr ""
+
+#: templates/web/index.html:44
+msgid "Check applications, vote for your favourites"
+msgstr ""
+
+#: templates/web/index.html:54
+msgid "WEB"
+msgstr ""
+
+#: templates/web/index.html:56
+msgid "Check news and vote using web interface"
+msgstr ""
+
+#: templates/web/index.html:64
+msgid "Android"
+msgstr ""
+
+#: templates/web/index.html:66
+msgid "Download our Android application for live push notifications and more"
+msgstr ""
+
+#: templates/web/index.html:74
+msgid "API"
+msgstr ""
+
+#: templates/web/index.html:76
+msgid ""
+"Too cool to use app? We also have api for you, use curl or what you want, "
+"have fun."
+msgstr ""
+
+#: templates/web/index.html:85
+msgid "Vote Started"
+msgstr ""
+
+#: templates/web/index.html:86
+msgid "Vote Ended"
+msgstr ""
+
+#: templates/web/login.html:5 templates/web/login.html.py:13
+msgid "Packathon Login"
+msgstr ""
+
+#: templates/web/login.html:30
+msgid "E-mail"
+msgstr ""
+
+#: templates/web/login.html:33
+msgid "Password"
+msgstr ""
+
+#: templates/web/profile.html:21 templates/web/profile.html.py:75
+msgid "Edit Profile"
+msgstr ""
+
+#: templates/web/profile.html:22
+msgid "For username and email changes please, ask administration"
+msgstr ""
+
+#: templates/web/profile.html:37 templates/web/project.html.py:69
+#: templates/web/team.html:68
+msgid "Packathon Participant"
+msgstr ""
+
+#: templates/web/profile.html:61
+msgid "Edit info"
+msgstr ""
+
+#: templates/web/profile.html:94
+msgid "Close"
+msgstr ""
+
+#: templates/web/profile.html:95
+msgid "Save"
+msgstr ""
+
+#: templates/web/project.html:27
+#, python-format
+msgid "by %(teamname)s"
+msgstr ""
+
+#: templates/web/project.html:35
+msgid "The Worst Unknown Error"
+msgstr ""
+
+#: templates/web/project.html:37
+msgid "Source Code"
+msgstr ""
+
+#: templates/web/project.html:40
+msgid "Edit Project"
+msgstr ""
+
+#: templates/web/project.html:42
+msgid "Vote"
+msgstr ""
+
+#: templates/web/project.html:54 templates/web/team.html.py:30
+#: templates/web/team.html:53
+msgid "Members"
+msgstr ""
+
+#: templates/web/project.html:55 templates/web/team.html.py:54
+#, python-format
+msgid "%(teamname)s Developers"
+msgstr ""
+
+#: templates/web/project.html:101
+msgid "Please login to vote"
+msgstr ""
+
+#: templates/web/project.html:102
+msgid "Unknown Error! Please, report to administration."
+msgstr ""
+
+#: templates/web/projects.html:14
+msgid "PROJECTS BY COMPETITORS"
+msgstr ""
+
+#: templates/web/projects.html:17
+msgid "Check projects, vote for your favourites"
+msgstr ""
+
+#: templates/web/team.html:27
+#, python-format
+msgid "%(projectname)s Developers"
+msgstr ""
+
+#: templates/web/team.html:35
+msgid "Project"
+msgstr ""
+
+#: templates/web/team.html:38
+msgid "Add Project"
+msgstr ""
+
+#: templates/web/team.html:40
+msgid "No Project"
+msgstr ""
+
+#: templates/web/teams.html:14
+msgid "Packathon Dev Teams"
+msgstr ""
+
+#: templates/web/teams.html:17
+msgid "Check teams, know your opponents"
+msgstr ""
+
+#: web/views.py:51
+msgid "Missing Fields"
+msgstr ""
+
+#: web/views.py:54
+msgid "User not found"
+msgstr ""
+
+#: web/views.py:62
+msgid "Account Disabled"
+msgstr ""
+
+#: web/views.py:64
+msgid "Invalid login details"
+msgstr ""
+
+#: web/views.py:107
+msgid "Project not found"
+msgstr ""
+
+#: web/views.py:114
+msgid "Team not set"
+msgstr ""
+
+#: web/views.py:118 web/views.py:152
+msgid "No users attached to team"
+msgstr ""
+
+#: web/views.py:144
+msgid "Team not found"
+msgstr ""
+
+#: web/views.py:158
+msgid "Packathon"
+msgstr ""
