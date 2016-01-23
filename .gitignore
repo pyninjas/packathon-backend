@@ -1,8 +1,19 @@
-*.pyc
+env/
+*.py[cod]
 __pycache__/
 migrations/
+# Local sqlite database
 db.sqlite3
+# Local settings
 local_settings.py
+# Collectstatic folder
 /static/
 packathon/static/
+# Pip logs
+pip-log.txt
+pip-delete-this-directory.txt
+# Translations
+*.mo
+*.pot
+# IDE
 .idea
